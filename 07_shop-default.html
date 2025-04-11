@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Galería La Musa - Arte Abstracto</title>
+    <meta content="Galería La Musa" name="author">
+    <meta content="Explora nuestra colección de arte abstracto - Obras originales de artistas contemporáneos" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/libs.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Fuentes artísticas -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para el botón de eliminar del carrito */
+        .remove-item {
+            color: #ff0000;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+        .remove-item:hover {
+            text-decoration: underline;
+        }
+        /* Ajustes visuales para el dropdown del carrito */
+        .uk-card-small {
+            max-width: 300px;
+        }
+        .cart-item {
+            position: relative;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body class="page-shop">
+
+    <!-- Loader-->
+    <div id="page-preloader"><span class="spinner border-t_second_b border-t_prim_a"></span></div>
+    <!-- Loader end-->
+
+    <div class="page-wrapper">
+        <header class="page-header page-header--static">
+            <div class="page-header__inner">
+                <div class="page-header__logo"><a class="logo" href="index.html"><img src="assets/img/Logo-galería-musa.svg" alt="Galería La Musa"></a></div>
+                <div class="page-header__menu">
+                    <nav class="page-nav" data-uk-navbar="">
+                        <ul class="uk-navbar-nav">
+                            <li><a href="01_home-cosmetic.html">Inicio</a></li>
+                            <li class="uk-active"><a href="07_shop-default.html">Tienda</a>
+                                <div class="uk-navbar-dropdown">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li><a href="07_shop-default.html">Pinturas</a></li>
+                                        <li> <a href="07_shop-default.html">Esculturas</a></li>
+                                        <li><a href="07_shop-default.html">Grabados</a></li>
+                                    </ul>
+                            <li><a href="06_contact.html">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="page-header__btn">
+                    <div class="page-header__btns-shop">
+                        <a class="uk-button-icon" href="09_login.html" data-uk-icon="user"></a>
+                        <div class="uk-inline">
+                            <a class="uk-button-icon" href="07_shop-default.html" data-uk-icon="cart"></a>
+
+                            <div data-uk-drop="pos: bottom-right">
+                                <div class="uk-card uk-card-body uk-card-default uk-card-small">
+                                    <ul class="uk-list uk-list-divider" id="cart-items">
+                                        
+                                        <li class="cart-item">
+                                            <div class="uk-grid-small uk-flex-middle" data-uk-grid>
+                                                <div class="uk-width-auto">
+                                                    <img class="uk-border-circle" width="60" height="60" src="assets/img/artwork-cart-1.jpg" alt="Obra de arte">
+                                                </div>
+                                                <div class="uk-width-expand">
+                                                    <h5 class="uk-margin-remove-bottom">Formas del Silencio</h5>
+                                                    <p class="uk-text-meta uk-margin-remove-top">1x $4,750.00</p>
+                                                </div>
+                                            </div>
+                                            <span class="remove-item" onclick="removeCartItem(this)">Eliminar</span>
+                                        </li>
+                                        <li class="cart-item">
+                                            <div class="uk-grid-small uk-flex-middle" data-uk-grid>
+                                                <div class="uk-width-auto">
+                                                    <img class="uk-border-circle" width="60" height="60" src="assets/img/artwork-cart-2.jpg" alt="Obra de arte">
+                                                </div>
+                                                <div class="uk-width-expand">
+                                                    <h5 class="uk-margin-remove-bottom">Reflejos Urbanos</h5>
+                                                    <p class="uk-text-meta uk-margin-remove-top">1x $1,850.00</p>
+                                                </div>
+                                            </div>
+                                            <span class="remove-item" onclick="removeCartItem(this)">Eliminar</span>
+                                        </li>
+                                        <li>
+                                            <div class="uk-grid-small uk-flex-middle uk-flex-between" data-uk-grid>
+                                                <div> <span>Total:</span></div>
+                                                <div> <span>$6,600.00</span></div>
+                                                <div class="uk-width-1-2">
+                                                    <a class="uk-button uk-button-default uk-button-small uk-width-1-1" href="#!">Ver carrito</a>
+                                                </div>
+                                                <div class="uk-width-1-2">
+                                                    <a class="uk-button uk-button-danger uk-button-small uk-width-1-1" href="#!">Pagar</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-main">
+            <div class="section-hero">
+                <div class="section-hero__bg"><img src="assets/img/Exposición2.jpg" alt="Exposición de arte abstracto"></div>
+                <div class="section-hero__content" data-uk-scrollspy="target: &gt; *; cls: uk-animation-slide-bottom-small; delay: 500">
+                    <h1 class="section-hero__title">Arte Abstracto</h1>
+                    <p class="section-hero__subtitle">Explora la belleza de lo no figurativo</p>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <div class="uk-section-large uk-container">
+                    <div class="uk-grid" data-uk-grid>
+                        <div class="uk-width-3-4@m">
+                            <div class="filter-head">
+                                <div>MOSTRANDO 1–6 DE 12 OBRAS</div>
+                                <div>
+                                    <select class="js-select right">
+                                        <option value="Sort By Popularity">Ordenar por popularidad</option>
+                                        <option value="Sort By Average Rating">Ordenar por valoración</option>
+                                        <option value="Sort By Latest">Ordenar por más recientes</option>
+                                        <option value="Sort By Price: Low to High">Precio: menor a mayor</option>
+                                        <option value="Sort By Price: High to Low">Precio: mayor a menor</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="uk-grid uk-grid-medium uk-child-width-1-3@m uk-child-width-1-2@s" data-uk-grid data-uk-scrollspy="target: &gt; div; cls: uk-animation-slide-bottom-small; delay: 300">
+
+                                <div>
+                                    <div class="product-card product-card--2">
+                                        <div class="product-card__box">
+                                            <div class="product-card__media"> 
+                                                <img class="product-card__img" src="assets/img/P1.jpg" alt="La Noche Estrellada" />
+                                                <div class="product-card__btns">
+                                                    <ul>
+                                                        <li><a href="#" onclick="addToCart('La Noche Estrellada', 'assets/img/P1.jpg', 12999)"><span>Añadir</span><i class="fas fa-shopping-basket"></i></a></li>
+                                                        <li><a href="#modal-art-1" data-uk-toggle><span>ampliar</span><i class="fas fa-search-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-card__info">
+                                                <div class="product-card__title"> 
+                                                    <a>La Noche Estrellada</a>
+                                                    <span>Pintura de Lienzo, 2023</span>
+                                                </div>
+                                                <div class="product-card__price">$12.999</div>
+                                                <div class="product-card__stars">
+                                                    <ul>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="far fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="product-card product-card--2">
+                                        <div class="product-card__box">
+                                            <div class="product-card__media"> 
+                                                <img class="product-card__img" src="assets/img/P6.jpg" alt="La Noche y El Gato" />
+                                                <div class="product-card__btns">
+                                                    <ul>
+                                                        <li><a href="#" onclick="addToCart('La Noche y El Gato', 'assets/img/P6.jpg', 17999)"><span>Añadir</span><i class="fas fa-shopping-basket"></i></a></li>
+                                                        <li><a href="#modal-art-2" data-uk-toggle><span>ampliar</span><i class="fas fa-search-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-card__info">
+                                                <div class="product-card__title"> 
+                                                    <a>La Noche y El Gato</a>
+                                                    <span>Pintura de Lienzo, 2022</span>
+                                                </div>
+                                                <div class="product-card__price">$17.999</div>
+                                                <div class="product-card__stars">
+                                                    <ul>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star-half-alt"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Obra 3 -->
+                                <div>
+                                    <div class="product-card product-card--2">
+                                        <div class="product-card__box">
+                                            <div class="product-card__media"> 
+                                                <img class="product-card__img" src="assets/img/E5.jpg" alt="Chimuelo" />
+                                                <div class="product-card__btns">
+                                                    <ul>
+                                                        <li><a href="#" onclick="addToCart('Chimuelo', 'assets/img/E5.jpg', 49999)"><span>Añadir</span><i class="fas fa-shopping-basket"></i></a></li>
+                                                        <li><a href="#modal-art-3" data-uk-toggle><span>ampliar</span><i class="fas fa-search-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-card__info">
+                                                <div class="product-card__title"> 
+                                                    <a>Chimuelo</a>
+                                                    <span>Impresión 3D, 2025</span>
+                                                </div>
+                                                <div class="product-card__price">$49.999</div>
+                                                <div class="product-card__stars">
+                                                    <ul>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="product-card product-card--2">
+                                        <div class="product-card__box">
+                                            <div class="product-card__media"> 
+                                                <img class="product-card__img" src="assets/img/E4.jpg" alt="You vs You" />
+                                                <div class="product-card__btns">
+                                                    <ul>
+                                                        <li><a href="#" onclick="addToCart('You vs You', 'assets/img/E4', 11999)"><span>Añadir</span><i class="fas fa-shopping-basket"></i></a></li>
+                                                        <li><a href="#modal-art-4" data-uk-toggle><span>ampliar</span><i class="fas fa-search-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-card__info">
+                                                <div class="product-card__title"> 
+                                                    <a>You vs You</a>
+                                                    <span>Escultura de greda, 2021</span>
+                                                </div>
+                                                <div class="product-card__price">$11.999</div>
+                                                <div class="product-card__stars">
+                                                    <ul>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="far fa-star"></i></li>
+                                                        <li><i class="far fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="product-card product-card--2">
+                                        <div class="product-card__box">
+                                            <div class="product-card__media"> 
+                                                <img class="product-card__img" src="assets/img/G4.jpg" alt="Futurama" />
+                                                <div class="product-card__btns">
+                                                    <ul>
+                                                        <li><a href="#" onclick="addToCart('Futurama', 'assets/img/G4.jpg', 28999)"><span>Añadir</span><i class="fas fa-shopping-basket"></i></a></li>
+                                                        <li><a href="#modal-art-5" data-uk-toggle><span>ampliar</span><i class="fas fa-search-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-card__info">
+                                                <div class="product-card__title"> 
+                                                    <a>Futurama</a>
+                                                    <span>Grabado a mano, 2024</span>
+                                                </div>
+                                                <div class="product-card__price">$28.999</div>
+                                                <div class="product-card__stars">
+                                                    <ul>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star-half-alt"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="product-card product-card--2">
+                                        <div class="product-card__box">
+                                            <div class="product-card__media"> 
+                                                <img class="product-card__img" src="assets/img/G3.jpg" alt="Disney Castle" />
+                                                <div class="product-card__btns">
+                                                    <ul>
+                                                        <li><a href="#" onclick="addToCart('Disney Castle', 'assets/img/G3.jpg', 40999)"><span>Añadir</span><i class="fas fa-shopping-basket"></i></a></li>
+                                                        <li><a href="#modal-art-6" data-uk-toggle><span>ampliar</span><i class="fas fa-search-plus"></i></a></li>
+                                                        <li><a href="#"><span>Favoritos</span><i class="fas fa-heart"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-card__info">
+                                                <div class="product-card__title"> 
+                                                    <a>Disney Castle</a>
+                                                    <span>Grabado a mano, 2023</span>
+                                                </div>
+                                                <div class="product-card__price">$40.999</div>
+                                                <div class="product-card__stars">
+                                                    <ul>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="far fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="uk-pagination uk-flex-center uk-margin-large-top">
+                                <li class="uk-active"><span>1</span></li>
+                                <li><a href="#">2</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Sidebar de filtros -->
+                        <div class="uk-width-1-4@m">
+                            <aside class="sidebar">
+                                <div class="widjet widjet-search">
+                                    <h4 class="widjet__title">Buscar obra</h4>
+                                    <form class="uk-search uk-search-default" action="#!">
+                                        <button class="uk-search-icon-flip" data-uk-search-icon type="submit"></button>
+                                        <input class="uk-input uk-search-input uk-form-large" type="search" placeholder="Buscar...">
+                                    </form>
+                                </div>
+                                <div class="widjet widjet-category">
+                                    <h4 class="widjet__title">Categorías</h4>
+                                    <ul class="list-category">
+                                        <li> <a href="07_shop-default.html"><span>Pintura</span><span>(6)</span></a></li>
+                                        <li> <a href="07_shop-default.html"><span>Escultura</span><span>(6)</span></a></li>
+                                        <li> <a href="07_shop-default.html"><span>Grabado</span><span>(6)</span></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="widjet widjet-tags-cloud">
+                                    <h4 class="widjet__title">Etiquetas</h4>
+                                    <ul class="tags-list">
+                                        <li><a href="#!">Abstracto</a></li>
+                                        <li><a href="#!">Contemporáneo</a></li>
+                                        <li><a href="#!">Lienzo</a></li>
+                                        <li><a href="#!">Impresión 3D</a></li>
+                                        <li><a href="#!">Mixta</a></li>
+                                        <li><a href="#!">Limitada</a></li>
+                                        <li><a href="#!">Exclusiva</a></li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <div class="page-footer__inner">
+                <div data-uk-grid>
+                    <div class="uk-width-2-5@m">
+                        <div class="page-footer__logo"><a class="logo" href="01_home-cosmetic.html"><img src="assets/img/Logo-galería-musa.svg" alt="Galería La Musa"></a></div>
+                        <div class="page-footer__menus">
+                            <div class="uk-child-width-1-2" data-uk-grid>
+                                <div>
+                                    <div class="uk-h4">Enlaces rápidos</div>
+                                    <ul class="uk-nav">
+                                        <li> <a href="01_home-cosmetic.html">Inicio</a></li>
+                                        <li> <a href="07_shop-default.html">Tienda</a></li>
+                                        <li> <a href="06_contact.html">Contacto</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="uk-h4">Servicios</div>
+                                    <ul class="uk-nav">
+                                        <li> <a href="#">Asesoría a coleccionistas</a></li>
+                                        <li> <a href="#">Envíos internacionales</a></li>
+                                        <li> <a href="#">Certificados de autenticidad</a></li>
+                                        <li> <a href="#">Montaje profesional</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-3-5@m">
+                        <div class="page-footer__text">
+                            <p>Galería La Musa se dedica a promover el arte contemporáneo, conectando a artistas excepcionales con coleccionistas apasionados. Nuestro espacio es un punto de encuentro para la creatividad y la apreciación artística.</p>
+                        </div>
+                        <div class="page-footer__social">
+                            <div class="uk-h3">Síguenos</div>
+                            <ul class="social">
+                                <li><a href="http://www.instagram.com/lamusaarte" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="http://www.facebook.com/lamusaarte" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="http://www.twitter.com/lamusaarte" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="page-footer__bottom">
+                            <div class="copy">© 2023 Galería La Musa — Todos los derechos reservados.</div>
+                            <div class="payments">
+                                <img src="assets/img/payment-1.png" alt="Visa">
+                                <img src="assets/img/payment-2.png" alt="Mastercard">
+                                <img src="assets/img/payment-3.png" alt="PayPal">
+                                <img src="assets/img/payment-4.png" alt="Transferencia">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script para el carrito -->
+    <script>
+        // Función para añadir obras al carrito
+        function addToCart(title, image, price) {
+            const cartItems = document.getElementById('cart-items');
+            const totalItem = cartItems.querySelector('li:last-child');
+            
+            // Crear nuevo elemento en el carrito
+            const newItem = document.createElement('li');
+            newItem.className = 'cart-item';
+            newItem.innerHTML = `
+                <div class="uk-grid-small uk-flex-middle" data-uk-grid>
+                    <div class="uk-width-auto">
+                        <img class="uk-border-circle" width="60" height="60" src="${image}" alt="${title}">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h5 class="uk-margin-remove-bottom">${title}</h5>
+                        <p class="uk-text-meta uk-margin-remove-top">1x $${price.toLocaleString()}.00</p>
+                    </div>
+                </div>
+                <span class="remove-item" onclick="removeCartItem(this)">Eliminar</span>
+            `;
+            
+            // Insertar antes del total
+            cartItems.insertBefore(newItem, totalItem);
+            
+            // Actualizar total (simulado)
+            updateCartTotal();
+            
+            // Mostrar notificación
+            UIkit.notification({
+                message: 'Obra añadida al carrito',
+                status: 'success',
+                pos: 'top-right',
+                timeout: 3000
+            });
+            
+            return false; // Prevenir comportamiento por defecto
+        }
+        
+        // Función para eliminar items del carrito
+        function removeCartItem(element) {
+            const itemToRemove = element.closest('.cart-item');
+            itemToRemove.remove();
+            updateCartTotal();
+            
+            UIkit.notification({
+                message: 'Obra eliminada',
+                status: 'danger',
+                pos: 'top-right',
+                timeout: 3000
+            });
+        }
+        
+        // Función para actualizar el total del carrito (simplificado)
+        function updateCartTotal() {
+            // En una implementación real, aquí calcularías el total sumando los precios
+            console.log('Actualizando total del carrito...');
+        }
+    </script>
+
+    <script src="assets/js/libs.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(82984270, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/82984270" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+</body>
+
+</html>
